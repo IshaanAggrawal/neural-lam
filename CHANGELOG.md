@@ -84,6 +84,8 @@ This release introduces new features including GIF animation support, wandb run 
 
 - Warn when running with `--eval` without `--load` to avoid accidentally evaluating randomly initialized weights [#190](https://github.com/mllam/neural-lam/pull/190) @varunsiravuri
 
+- Add automated API documentation using `mkdocs`, `mkdocstrings`, and `gen-files`, including code coverage checks with `interrogate`. [#61](https://github.com/mllam/neural-lam/issues/61) @Antigravity
+
 ## [v0.5.0](https://github.com/mllam/neural-lam/releases/tag/v0.5.0)
 
 This release contains maintenance and fixes, preventing some unexpected crashes and improving CICD and testing.

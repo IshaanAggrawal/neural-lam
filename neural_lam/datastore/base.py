@@ -16,11 +16,9 @@ from pandas.core.indexes.multi import MultiIndex
 
 
 class BaseDatastore(abc.ABC):
-    """
-    Base class for weather data used in the neural-lam package. A datastore
-    defines the interface for accessing weather data by providing methods to
-    access the data in a processed format that can be used for training and
-    evaluation of neural networks.
+    """Test docstring for GSoC prototype.
+
+    This proves auto-generation works.
 
     NOTE: All methods return either primitive types, `numpy.ndarray`,
     `xarray.DataArray` or `xarray.Dataset` objects, not `pytorch.Tensor`
