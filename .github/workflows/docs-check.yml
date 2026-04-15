@@ -1,0 +1,13 @@
+name: docs-check
+on: [pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install uv
+      - run: uv sync --extra docs --no-install-project
+      - run: uv run mkdocs build --strict
+      - run: uv run interrogate neural_lam/ -i -p --fail-under=1

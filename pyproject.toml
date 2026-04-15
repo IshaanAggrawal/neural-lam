@@ -130,3 +130,13 @@ exclude = [
   ".venv/",
   "venv/",
 ]
+
+[project.optional-dependencies]
+docs = [
+    "mkdocs-material>=9.7,<10",
+    "mkdocstrings[python]",
+    "mkdocs-gen-files",
+    "mkdocs-literate-nav",
+    "interrogate",
+]
+
