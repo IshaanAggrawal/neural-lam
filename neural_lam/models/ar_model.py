@@ -320,16 +320,16 @@ class ARModel(pl.LightningModule):
         )
         return batch_loss
 
-    def all_gather_cat(self, tensor_to_gather):
+    def all_gather_cat(self, tensor_to_gather: torch.Tensor) -> torch.Tensor:
         """
         Gather tensors across all ranks, and concatenate across dim. 0 (instead
-        of stacking in new dim. 0)
+        of stacking in new dim. 0).
 
-        tensor_to_gather: (d1, d2, ...), distributed over K ranks
+        Args:
+            tensor_to_gather (torch.Tensor): Distributed tensor to gather.
 
-        returns:
-            - single-device strategies: (d1, d2, ...)
-            - multi-device strategies: (K*d1, d2, ...)
+        Returns:
+            torch.Tensor: The gathered and concatenated tensor.
         """
         gathered = self.all_gather(tensor_to_gather)
         # all_gather adds a leading dim (K,) only on multi-device runs;

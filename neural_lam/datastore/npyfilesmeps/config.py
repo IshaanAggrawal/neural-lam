@@ -15,9 +15,9 @@ class Projection:
 
     Attributes:
         class_name: The class name of the projection, this should be a valid
-        cartopy.crs class.
+            cartopy.crs class.
         kwargs: A dictionary of keyword arguments specific to the projection
-        type.
+            type.
 
     """
 

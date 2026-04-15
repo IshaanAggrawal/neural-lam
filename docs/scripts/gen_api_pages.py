@@ -1,8 +1,13 @@
-import mkdocs_gen_files
+# Standard library
 from pathlib import Path
+
+# Third-party
+import mkdocs_gen_files
+
 nav = mkdocs_gen_files.Nav()
 for path in sorted(Path("neural_lam").rglob("*.py")):
-    if path.name.startswith("_"): continue
+    if path.name.startswith("_"):
+        continue
     module = ".".join(path.with_suffix("").parts)
     doc_path = Path("api") / path.relative_to("neural_lam").with_suffix(".md")
     with mkdocs_gen_files.open(doc_path, "w") as f:

@@ -140,3 +140,5 @@ docs = [
     "interrogate",
 ]
 
+[tool.pytest.ini_options]
+norecursedirs = ["docs"]
